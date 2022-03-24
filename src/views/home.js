@@ -3,7 +3,7 @@ import Card from "../components/card";
 import FormGroup from "../components/form-group";
 import axios from "axios";
 
-const baseURL = "https://mvsistemas-coffe.herokuapp.com/api/usuarios"
+const baseURL = "https://projetomvcafe.herokuapp.com/cafe"
 class Home extends React.Component{
 
 
@@ -19,7 +19,7 @@ class Home extends React.Component{
     }
 
     inserir = () =>{
-        axios.post('https://mvsistemas-coffe.herokuapp.com/api/usuarios', {
+        axios.post('https://projetomvcafe.herokuapp.com/cafe', {
             nome: this.state.nome,
             cpf: this.state.cpf,
             cafe: this.state.cafe
@@ -32,7 +32,7 @@ class Home extends React.Component{
     }
     
     componentDidMount(){
-        axios.get('https://mvsistemas-coffe.herokuapp.com/api/usuarios')
+        axios.get('https://projetomvcafe.herokuapp.com/cafe')
         .then(response => {
             const lista = response.data;
             this.setState({listagem: lista})
@@ -50,7 +50,7 @@ class Home extends React.Component{
 
 
         return(
-            <Card title="Café da manhã na Mv!">
+            <Card title="Café MV">
             <div className="row">
               <div className="col-md-12">
                 <div className="bs-component">
